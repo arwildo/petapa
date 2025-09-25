@@ -242,29 +242,6 @@ animations = [{
 "loop": true,
 "name": &"jalan_kanan",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_km0yn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ckdwd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wgj0k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uebvl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_knjot")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kcb5e")
-}],
-"loop": true,
-"name": &"jalan_kiri",
-"speed": 5.0
 }]
 
 [node name="Dunia" type="Node2D"]
@@ -283,5 +260,4 @@ script = ExtResource("4_qd6tr")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
 position = Vector2(13, 54)
 sprite_frames = SubResource("SpriteFrames_5vr8a")
-animation = &"jalan_bawah"
-frame_progress = 0.690452
+animation = &"jalan_kanan"

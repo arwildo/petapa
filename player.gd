@@ -1,62 +1,35 @@
 extends CharacterBody2D
 
-const kecepatan = 100
-var arah = "diam"
+const KECEPATAN = 130
+var state: State
+var states = {}
+
+func _ready():
+	# load states
+	states["idle"] = load("res://states/IdleState.gd").new()
+	states["jalan"] = load("res://states/JalanState.gd").new()
+
+	# kasih referensi player ke setiap state
+	for s in states.values():
+		s.player = self
+
+	change_state("idle")
+	
+func get_animasi():
+	return $AnimatedSprite2D
+	
+func change_state(new_state):
+	if state:
+		state.exit()
+	state = states[new_state]
+	state.enter()
+
+func _input(event):
+	state.handle_input(event)
+
+func _process(delta):
+	state.update(delta)
 
 func _physics_process(delta):
-	gerak_player(delta)
-
-func gerak_player(delta):
-	if Input.is_action_pressed("ui_right"):
-		arah = "kanan"
-		arah_player(true)
-		velocity.x = kecepatan
-		velocity.y = 0
-	elif Input.is_action_pressed("ui_left"):
-		arah = "kiri"
-		arah_player(true)
-		velocity.x = -kecepatan
-		velocity.y = 0
-	elif Input.is_action_pressed("ui_up"):
-		arah = "atas"
-		arah_player(true)
-		velocity.x = 0
-		velocity.y = -kecepatan
-	elif Input.is_action_pressed("ui_down"):
-		arah = "bawah"
-		arah_player(true)
-		velocity.x = 0
-		velocity.y = kecepatan
-	else:
-		arah_player(false)
-		velocity.x = 0
-		velocity.y = 0
-	
+	state.physics_update(delta)
 	move_and_slide()
-
-func arah_player(gerak):
-	var arah_sekarang = arah
-	var animasi = $AnimatedSprite2D
-	
-	if arah_sekarang == "kanan":
-		animasi.flip_h = false
-		if gerak:
-			animasi.play("jalan_kanan")
-		else:
-			animasi.play("diam")
-	elif arah_sekarang == "kiri":
-		animasi.flip_h = true
-		if gerak:
-			animasi.play("jalan_kiri")
-		else:
-			animasi.play("diam")
-	elif arah_sekarang == "atas":
-		if gerak:
-			animasi.play("jalan_atas")
-		else:
-			animasi.play("diam")
-	elif arah_sekarang == "bawah":
-		if gerak:
-			animasi.play("jalan_bawah")
-		else:
-			animasi.play("diam")
