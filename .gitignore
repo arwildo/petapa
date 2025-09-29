@@ -17,3 +17,5 @@ Thumbs.db
 .idea/
 *.swp
 
+# Files
+preview.png.import
