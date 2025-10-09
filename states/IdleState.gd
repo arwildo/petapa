@@ -12,3 +12,5 @@ func physics_update(_delta):
 	or Input.is_action_pressed("ui_up") \
 	or Input.is_action_pressed("ui_down"):
 		player.change_state("jalan")
+	if Input.is_action_pressed("tombol_serang"):
+		player.change_state("serang")

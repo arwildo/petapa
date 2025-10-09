@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://c80pxm3t611hg"]
+[gd_scene load_steps=41 format=4 uid="uid://c80pxm3t611hg"]
 
 [ext_resource type="Texture2D" uid="uid://gtvlryjb46hs" path="res://arts/tilesets/grass.png" id="1_2u4i5"]
 [ext_resource type="Texture2D" uid="uid://grdvye51qh4y" path="res://arts/tilesets/plains.png" id="2_yd3ya"]
@@ -163,6 +163,22 @@ region = Rect2(192, 192, 48, 48)
 atlas = ExtResource("5_j6kj6")
 region = Rect2(240, 192, 48, 48)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mhym"]
+atlas = ExtResource("5_j6kj6")
+region = Rect2(0, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2syh"]
+atlas = ExtResource("5_j6kj6")
+region = Rect2(48, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muvwf"]
+atlas = ExtResource("5_j6kj6")
+region = Rect2(96, 288, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p3m67"]
+atlas = ExtResource("5_j6kj6")
+region = Rect2(144, 288, 48, 48)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_5vr8a"]
 animations = [{
 "frames": [{
@@ -256,6 +272,23 @@ animations = [{
 "loop": true,
 "name": &"jalan_kanan",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mhym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2syh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_muvwf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p3m67")
+}],
+"loop": true,
+"name": &"serang_depan",
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qd6tr"]
@@ -280,7 +313,7 @@ script = ExtResource("4_qd6tr")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
 position = Vector2(13, 54)
 sprite_frames = SubResource("SpriteFrames_5vr8a")
-animation = &"jalan_kanan"
+animation = &"serang_depan"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 position = Vector2(14, 70)
