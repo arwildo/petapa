@@ -1,10 +1,10 @@
 extends State
 
 const ARAH_MAP = {
-	"ui_right": {"vec": Vector2.RIGHT, "anim": "serang_samping", "scale_x": 1},
-	"ui_left":  {"vec": Vector2.LEFT,  "anim": "serang_samping",  "scale_x": -1},
-	"ui_up":    {"vec": Vector2.UP,    "anim": "serang_atas"},
-	"ui_down":  {"vec": Vector2.DOWN,  "anim": "serang_bawah"}
+	"ui_right": {"vec": Vector2.RIGHT},
+	"ui_left":  {"vec": Vector2.LEFT},
+	"ui_up":    {"vec": Vector2.UP},
+	"ui_down":  {"vec": Vector2.DOWN}
 }
 
 func enter():
