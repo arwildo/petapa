@@ -8,20 +8,23 @@ const ARAH_MAP = {
 }
 
 func physics_update(_delta):
-	var vel = Vector2.ZERO
+	player.vel = Vector2.ZERO
 	var animasi = player.get_animasi()
 	var jalan = false
 
 	for action in ARAH_MAP.keys():
 		if Input.is_action_pressed(action):
 			var data = ARAH_MAP[action]
-			vel += data["vec"]
+			player.vel += data["vec"]
+			player.arah_terakhir = data["vec"] # simpan arah terkahir
 			animasi.play(data["anim"])
 			if data.has("scale_x"):
 				animasi.scale.x = data["scale_x"]
 			jalan = true
 
 	if jalan:
-		player.velocity = vel.normalized() * player.KECEPATAN
+		player.velocity = player.vel.normalized() * player.KECEPATAN
+	elif Input.is_action_pressed("tombol_serang"):
+		player.change_state("serang")
 	else:
 		player.change_state("idle")
