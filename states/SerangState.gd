@@ -25,7 +25,7 @@ func get_arah_sekarang():
 	return Vector2.ZERO
 
 func setup_animasi_serang(arah, animasi):
-	const KECEPATAN_SLIDE = 400
+	const KECEPATAN_SLIDE = 150
 	player.velocity = arah.normalized() * KECEPATAN_SLIDE
 	
 	# tentukan animasi berdasarkan arah
