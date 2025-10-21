@@ -1,12 +1,12 @@
-## Petapa
+# Petapa
 <img src="https://raw.githubusercontent.com/arwildo/petapa/refs/heads/main/preview.png"></img>
 Series belajar bikin game pakai Godot 👇 <br>
 https://www.youtube.com/playlist?list=PL7jn7TYjOiG2uw3ux3G19W528LtvdwhLE
-
-### Requirement 
+   
+## Requirement 
 Godot v.4.4
 
-### Cara Install
+## Cara Install
 1. Download [Godot Versi 4.4](https://godotengine.org/download/archive/4.4-stable/)
 2. Download atau `git clone` repo ini
 
