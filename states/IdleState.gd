@@ -3,7 +3,9 @@ extends State
 func enter():
 	var animasi = player.get_animasi()
 	player.velocity = Vector2.ZERO
-	var arah = player.arah_terakhir if player.arah_terakhir != null else Vector2.DOWN
+	var arah = player.arah_terakhir
+	if arah == null:
+		player.arah_terkahir = Vector2.DOWN
 	
 	if arah == Vector2.RIGHT:
 		animasi.play("idle_kanan")
