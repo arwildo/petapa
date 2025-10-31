@@ -3,7 +3,18 @@ extends State
 func enter():
 	var animasi = player.get_animasi()
 	player.velocity = Vector2.ZERO
-	animasi.play("diam")
+	var arah = player.arah_terakhir if player.arah_terakhir != null else Vector2.DOWN
+	
+	if arah == Vector2.RIGHT:
+		animasi.play("idle_kanan")
+		animasi.scale.x = 1
+	elif arah == Vector2.LEFT:
+		animasi.play("idle_kanan")
+		animasi.scale.x = -1
+	elif arah == Vector2.UP:
+		animasi.play("idle_atas")
+	else:
+		animasi.play("idle_bawah")
 
 func physics_update(_delta):
 	# kalau ada input, pindah ke JalanState
