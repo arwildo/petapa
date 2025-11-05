@@ -15,4 +15,4 @@ Godot v.4.4
 5. Selesai
 
 ### Video Tutorial Install
-Kalau cara diatas kurang jelas [nonton disini](https://youtu.be/RhkG1AIKSO8)
+Kalau cara di atas kurang jelas, [ikuti video berikut](https://youtu.be/RhkG1AIKSO8)
