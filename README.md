@@ -13,3 +13,6 @@ Godot v.4.4
    `git clone https://github.com/arwildo/petapa`
 4. Buka Godot dan pilih "Import Existing Project" dan arahkan ke project petapa yang telah di git clone
 5. Selesai
+
+### Video Tutorial Install
+Kalau cara diatas kurang jelas [nonton disini](https://youtu.be/RhkG1AIKSO8)
