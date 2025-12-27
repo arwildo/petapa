@@ -1,8 +1,9 @@
-[gd_scene load_steps=61 format=4 uid="uid://c80pxm3t611hg"]
+[gd_scene load_steps=62 format=4 uid="uid://c80pxm3t611hg"]
 
 [ext_resource type="Texture2D" uid="uid://gtvlryjb46hs" path="res://arts/tilesets/grass.png" id="1_2u4i5"]
 [ext_resource type="Texture2D" uid="uid://grdvye51qh4y" path="res://arts/tilesets/plains.png" id="2_yd3ya"]
 [ext_resource type="Texture2D" uid="uid://bko1ka6mxc1wl" path="res://arts/objects/objects.png" id="3_i6oci"]
+[ext_resource type="PackedScene" uid="uid://cgxneeyc7qals" path="res://slime.tscn" id="4_j6kj6"]
 [ext_resource type="Script" uid="uid://dpiqq2vp5i8wq" path="res://player.gd" id="4_qd6tr"]
 [ext_resource type="Texture2D" uid="uid://d2l27y54anqdh" path="res://arts/characters/player.png" id="5_j6kj6"]
 
@@ -496,6 +497,9 @@ tile_set = SubResource("TileSet_i6oci")
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAADAAkAAAAAAAEAAAAEAA4AAAAAAAEAAAAUAAcAAAAAAAEAAAAfAAwAAAAAAAEAAAAaAAYAAAAAAAEAAAARAAsAAAAAAAUAAAARAAMAAAAAAAUAAAAgAAgAAAAAAAUAAAACAA8AAAAAAAUAAAAFAAgAAAAAAAUAAAAGAA8AAAAGAAcAAAAKAAEAAAAGAAcAAAAYAAwAAAAGAAcAAAAFAAwAAAAIAAYAAAAXAAkAAAAIAAYAAAAbABUAAAAIAAYAAAANABUAAAAIAAYAAAADABQAAAAIAAYAAAASABUAAAAIAAYAAAAXABUAAAAIAAYAAAAjAAsAAAAKAAcAAAAXAAQAAAAKAAcAAAAFABMAAAAKAAcAAAAJABUAAAAKAAcAAAAGABYAAAAAAAAAAAAbAAsAAAAAAAAAAAAcAAgAAAAFAAAAAAAgABYAAAAFAAAAAAA=")
 tile_set = SubResource("TileSet_qd6tr")
+
+[node name="slime" parent="." instance=ExtResource("4_j6kj6")]
+position = Vector2(278, 124)
 
 [node name="player" type="CharacterBody2D" parent="."]
 y_sort_enabled = true

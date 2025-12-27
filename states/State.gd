@@ -5,6 +5,6 @@ var player
 
 func enter(): pass
 func exit(): pass
-func handle_input(event): pass
-func update(delta): pass
-func physics_update(delta): pass
+func handle_input(_event): pass
+func update(_delta): pass
+func physics_update(_delta): pass
