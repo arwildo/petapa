@@ -16,3 +16,6 @@ Godot v.4.4
 
 ### Video Tutorial Install
 Kalau cara di atas kurang jelas, [ikuti video berikut](https://youtu.be/RhkG1AIKSO8)
+
+## Credits
+Original Arts by Game Endeavor
