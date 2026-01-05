@@ -97,6 +97,7 @@ texture = ExtResource("3_i6oci")
 
 [sub_resource type="TileSet" id="TileSet_qd6tr"]
 physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_c41f1")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e352r"]
@@ -483,8 +484,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_qd6tr"]
-radius = 6.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j6kj6"]
+size = Vector2(11, 3)
 
 [node name="Dunia" type="Node2D"]
 y_sort_enabled = true
@@ -503,6 +504,8 @@ position = Vector2(278, 124)
 
 [node name="player" type="CharacterBody2D" parent="."]
 y_sort_enabled = true
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("4_qd6tr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
@@ -512,5 +515,5 @@ animation = &"idle_kanan"
 frame_progress = 0.974154
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(14, 70)
-shape = SubResource("CircleShape2D_qd6tr")
+position = Vector2(13.5, 69.5)
+shape = SubResource("RectangleShape2D_j6kj6")

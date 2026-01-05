@@ -43,16 +43,17 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5jc4t"]
-radius = 5.0
+radius = 6.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 collision_layer = 4
 script = ExtResource("1_5jc4t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
 position = Vector2(0, 2.195)
 shape = SubResource("CircleShape2D_4l1t8")
-debug_color = Color(0.639376, 0.36851, 0.942701, 0.42)
+debug_color = Color(5.0056e-06, 0.582531, 0.790895, 0.42)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2002g")
@@ -66,3 +67,4 @@ collision_mask = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_5jc4t")
+debug_color = Color(0.781857, 0.256015, 0.870392, 0.42)
