@@ -518,7 +518,7 @@ script = ExtResource("4_qd6tr")
 position = Vector2(13, 54)
 sprite_frames = SubResource("SpriteFrames_5vr8a")
 animation = &"serang_samping"
-frame_progress = 0.750257
+frame_progress = 0.903684
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 position = Vector2(13.5, 69.5)
@@ -533,3 +533,5 @@ monitoring = false
 position = Vector2(13, 61)
 shape = SubResource("CapsuleShape2D_j6kj6")
 debug_color = Color(0.437337, 0.455193, 1, 0.42)
+
+[connection signal="frame_changed" from="player/AnimatedSprite2D" to="player" method="_on_animated_sprite_2d_frame_changed"]

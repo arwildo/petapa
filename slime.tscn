@@ -3,9 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://byymfds2iji0t" path="res://arts/characters/slime.png" id="1_2d52u"]
 [ext_resource type="Script" uid="uid://b4555o82pc0be" path="res://slime.gd" id="1_5jc4t"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4l1t8"]
-radius = 7.07107
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5jc4t"]
 atlas = ExtResource("1_2d52u")
 region = Rect2(0, 0, 32, 32)
@@ -82,23 +79,26 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_4l1t8"]
+radius = 7.07107
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_5jc4t"]
 radius = 6.0
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 4
 script = ExtResource("1_5jc4t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2002g")
+animation = &"mati"
+frame_progress = 0.691114
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
 position = Vector2(0, 2.195)
 shape = SubResource("CircleShape2D_4l1t8")
 debug_color = Color(5.0056e-06, 0.582531, 0.790895, 0.42)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_2002g")
-animation = &"mati"
-frame_progress = 0.287926
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 16
