@@ -92,7 +92,7 @@ script = ExtResource("1_5jc4t")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2002g")
 animation = &"mati"
-frame_progress = 0.691114
+frame_progress = 0.822036
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true

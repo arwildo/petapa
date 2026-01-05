@@ -12,8 +12,7 @@ func _ready():
 func kena_serang(area):
 	if sudah_mati:
 		return
-
-	if area.name == "AttackBox":
+	if area.name == "AttackBox" and area.monitoring:
 		musuh_mati()
 
 func musuh_mati():
