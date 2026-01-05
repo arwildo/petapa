@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cgxneeyc7qals"]
+[gd_scene load_steps=15 format=3 uid="uid://cgxneeyc7qals"]
 
 [ext_resource type="Texture2D" uid="uid://byymfds2iji0t" path="res://arts/characters/slime.png" id="1_2d52u"]
 [ext_resource type="Script" uid="uid://b4555o82pc0be" path="res://slime.gd" id="1_5jc4t"]
@@ -22,23 +22,63 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("1_2d52u")
 region = Rect2(96, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2002g"]
+atlas = ExtResource("1_2d52u")
+region = Rect2(0, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bratd"]
+atlas = ExtResource("1_2d52u")
+region = Rect2(32, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5b0gg"]
+atlas = ExtResource("1_2d52u")
+region = Rect2(64, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_da4t2"]
+atlas = ExtResource("1_2d52u")
+region = Rect2(96, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrxk1"]
+atlas = ExtResource("1_2d52u")
+region = Rect2(128, 384, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_2002g"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_5jc4t")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_4l1t8")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_ppcr1")
 }, {
-"duration": 1.0,
+"duration": 0.7,
 "texture": SubResource("AtlasTexture_jayke")
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_2002g")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_bratd")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_5b0gg")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_da4t2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrxk1")
+}],
+"loop": true,
+"name": &"mati",
 "speed": 5.0
 }]
 
@@ -57,8 +97,8 @@ debug_color = Color(5.0056e-06, 0.582531, 0.790895, 0.42)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2002g")
-animation = &"idle"
-frame_progress = 0.694647
+animation = &"mati"
+frame_progress = 0.287926
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 16

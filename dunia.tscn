@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://c80pxm3t611hg"]
+[gd_scene load_steps=63 format=4 uid="uid://c80pxm3t611hg"]
 
 [ext_resource type="Texture2D" uid="uid://gtvlryjb46hs" path="res://arts/tilesets/grass.png" id="1_2u4i5"]
 [ext_resource type="Texture2D" uid="uid://grdvye51qh4y" path="res://arts/tilesets/plains.png" id="2_yd3ya"]
@@ -487,6 +487,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j6kj6"]
 size = Vector2(11, 3)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j6kj6"]
+radius = 19.0
+height = 38.0
+
 [node name="Dunia" type="Node2D"]
 y_sort_enabled = true
 
@@ -513,9 +517,19 @@ script = ExtResource("4_qd6tr")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
 position = Vector2(13, 54)
 sprite_frames = SubResource("SpriteFrames_5vr8a")
-animation = &"idle_kanan"
-frame_progress = 0.974154
+animation = &"serang_samping"
+frame_progress = 0.750257
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 position = Vector2(13.5, 69.5)
 shape = SubResource("RectangleShape2D_j6kj6")
+
+[node name="AttackBox" type="Area2D" parent="player"]
+collision_layer = 8
+collision_mask = 16
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player/AttackBox"]
+position = Vector2(13, 61)
+shape = SubResource("CapsuleShape2D_j6kj6")
+debug_color = Color(0.437337, 0.455193, 1, 0.42)
