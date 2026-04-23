@@ -18,11 +18,31 @@ func kena_serang(area):
 func musuh_mati():
 	sudah_mati = true
 
-	hitbox.monitoring = false
+	hitbox.set_deferred("monitoring", false)
 	set_physics_process(false)
 	set_process(false)
 
 	sprite.play("mati")
 
 	await get_tree().create_timer(0.4).timeout
-	queue_free()
+	respawn()
+
+func respawn():
+	sudah_mati = false
+
+	var tanah = get_parent().get_node("tanah") as TileMapLayer
+	if tanah:
+		var current_cell = tanah.local_to_map(position)
+		for i in 20:
+			var random_cell = Vector2i(
+				current_cell.x + randi_range(-5, 5),
+				current_cell.y + randi_range(-5, 5)
+			)
+			if tanah.get_cell_source_id(random_cell) != -1:
+				global_position = tanah.map_to_local(random_cell)
+				break
+
+	hitbox.monitoring = true
+	set_physics_process(true)
+	set_process(true)
+	sprite.play("idle")
