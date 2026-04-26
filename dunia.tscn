@@ -529,7 +529,7 @@ collision_layer = 8
 collision_mask = 16
 monitoring = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player/AttackBox"]
+[node name="AttacBox2D" type="CollisionShape2D" parent="player/AttackBox"]
 position = Vector2(13, 61)
 shape = SubResource("CapsuleShape2D_j6kj6")
 debug_color = Color(0.437337, 0.455193, 1, 0.42)
